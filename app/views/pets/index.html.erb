@@ -1,0 +1,15 @@
+<h1>Lost pets</h1>
+
+
+<% @pets.each do |pet| %>
+  <p>
+    <%= link_to "#{pet.name} (#{pet.species.upcase}) found #{time_ago_in_words(pet.found_on)} ago", pet_path(pet) %>
+
+    <%= link_to "<i class='fas fa-paw'></i>".html_safe, pet_path(pet), method: 'delete' %>
+  </p>
+<% end %>
+
+
+<p>
+  <%= link_to "I found a pet!", new_pet_path %>
+</p>

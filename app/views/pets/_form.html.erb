@@ -1,0 +1,9 @@
+<div class="container">
+  <%= simple_form_for(pet) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :species, as: :select, collection: Pet::ALLOWED_SPECIES.sort %>
+    <%= f.submit %>
+  <% end %>
+</div>
+
